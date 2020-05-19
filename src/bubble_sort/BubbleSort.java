@@ -14,25 +14,25 @@ public class BubbleSort {
             arrayOutput(array);
         }
 
-        public static int numberVerification() {
-            Scanner in = new Scanner(System.in);
-            int numberFromUser=0;
-            if (in.hasNextInt()) {
-                numberFromUser=in.nextInt();
-                if (numberFromUser<=0 ) {
-                    System.out.println("Input number is '<' or '=' to zero");
-                    numberVerification();
-                }
-            }else {
-                System.out.println("Input value isn't integer type, please try again");
-                numberVerification();
+    public static int numberVerification() {
+        Scanner in = new Scanner(System.in);
+        int numberFromUser=0;
+        if (in.hasNextInt()) {
+            numberFromUser=in.nextInt();
+            if (numberFromUser<=0 ) {
+                System.out.println("Input number is '<' or '=' to zero");
+                numberFromUser=numberVerification();
             }
-            return numberFromUser;
+        }else {
+            System.out.println("Input value isn't integer type, please try again");
+            numberFromUser=numberVerification();
         }
+        return numberFromUser;
+    }
 
         static void arrayOutput(int [] array){
             for (int i:array) {
-                System.out.print(i+" ");
+                System.out.print(i+" | ");
             }
             System.out.println();
         }
