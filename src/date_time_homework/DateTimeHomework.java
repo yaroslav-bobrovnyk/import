@@ -27,18 +27,21 @@ public class DateTimeHomework {
     }
 
     private static void monthsLength(int year){
-        Month month=Month.JANUARY;
-        if (year%4==0) {
+        LocalDate localDate=LocalDate.of(year,Month.JANUARY,1);
+//        Month month=Month.JANUARY;
+//        if (year%4==0) {
             for (int i = 0; i < 12; i++) {
-                System.out.println(month.name() +" has "+ month.length(true)+" days in "+year+" year.");
-                month = month.plus(1);
+                System.out.println(localDate.getMonth() +" has "+ localDate.lengthOfMonth()+" days in "+year+" year.");
+                //month = month.plus(1);
+                localDate=localDate.plusMonths(1);
+
             }
-        }else {
-            for (int i = 0; i < 12; i++) {
-                System.out.println(month.name() +" has "+ month.length(false)+" days in "+year+" year.");
-                month = month.plus(1);
-            }
-        }
+//        }else {
+//            for (int i = 0; i < 12; i++) {
+//                System.out.println(month.name() +" has "+ month.length(false)+" days in "+year+" year.");
+//                month = month.plus(1);
+//            }
+//        }
     }
 
     private static void listOfMondays(){

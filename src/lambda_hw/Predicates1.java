@@ -20,5 +20,5 @@ public class Predicates1 {
 }
 
 interface TwoStringPredicate{
-     boolean test(String string1, String string2);
+    boolean test(String string1, String string2);
 }
